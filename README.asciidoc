@@ -1,0 +1,18 @@
+== Arquillian Cube running WildFly Swarm
+
+Example setup of running https://github.com/wildfly-swarm/wildfly-swarm[WildFly Swarm] using https://github.com/arquillian/arquillian-cube/#containerless-server-and-docker[Arquillian Cube Containerless] container.
+
+Currently ShrinkWrap imports Maven generated '-swarm.jar' file and uses that as a source for the Docker image build. Maven Surefire is setup to skip normal test execution and only execute in 'verify' phase so we can make sure the '-swarm.jar' file has been created.
+
+Future work:
+
+* Create ShrinkWrap WildFly Swarm Importer
+
+[source, java]
+----
+return ShrinkWrap.create(WildFlySwarmImporter.class)
+   .loadPomFromFile(new File("pom.xml"))
+   .importBuildOutput().as(JavaArchive.class);
+----
+
+Allow ShrinkWrap to generate Swarm file directly outside of Maven.
