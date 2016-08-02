@@ -9,13 +9,13 @@
 	<packaging>war</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 
-		<version.wildfly_swarm>1.0.0.Alpha2-SNAPSHOT</version.wildfly_swarm>
+		<version.wildfly_swarm>1.0.0.Final</version.wildfly_swarm>
 
-		<version.arquillian_core>1.1.8.Final</version.arquillian_core>
-		<version.arquillian_cube>1.0.0.Alpha5</version.arquillian_cube>
+		<version.arquillian_core>1.1.11.Final</version.arquillian_core>
+		<version.arquillian_cube>1.0.0.Final-SNAPSHOT</version.arquillian_cube>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -38,7 +38,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.wildfly.swarm</groupId>
-			<artifactId>wildfly-swarm-jaxrs</artifactId>
+			<artifactId>jaxrs-cdi</artifactId>
 			<version>${version.wildfly_swarm}</version>
 			<scope>provided</scope>
 			<exclusions>
@@ -89,7 +89,7 @@
 					<execution>
 						<phase>package</phase>
 						<goals>
-							<goal>create</goal>
+							<goal>package</goal>
 						</goals>
 					</execution>
 				</executions>
